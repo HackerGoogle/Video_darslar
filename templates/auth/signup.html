@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div style="text-align: center;">
+
+    <h1 style="color: black;">Ro'yhatdan o'tish  <a href="{% url 'users:login' %}" class="text" type="text" style="text-align: center;">Kirish</a></h1>
+    <br>
+    <br>
+    <div class="container-fluid d-flex justify-content-center mt-4">
+        <div class="card p-4 border border-2 col-8">
+            <form method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for fields in sign %}
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label fs-4">{{ fields.label }}</label>
+                    {{ fields }}
+                    <small style="color: red;">{{ fields.errors }}</small>
+                </div>
+                {% endfor %}
+                <div class="text-center m-3">
+                    <button type="submit" class="btn btn-primary col-3">Ro'yhatdan o'tish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
+    <form action="" , method="POST">
+
+        {% csrf_token %}
+        {{ sign.first_name }}
+        <br>
+        <br>
+        {{ sign.last_name }}
+        <br>
+        <br>
+        {{ sign.email }}
+        <br>
+        <br>
+        {{ sign.password }}
+        <br>
+        <br>
+        <button type="submit" class="btn btn-lg" style="background: orangered;color: white;">Sign up</button>
+    </form>
+</div> -->
